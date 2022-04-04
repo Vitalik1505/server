@@ -28,7 +28,7 @@ app.get('/', (req, res) => {
 const start = async () => {
     try{
         await sequelize.authenticate()
-        //await sequelize.sync()      //функція буде звіряти стан бази данних зі схемою данних 
+        await sequelize.sync()      //функція буде звіряти стан бази данних зі схемою данних 
         app.listen(PORT, () => console.log(`Server started on port ${PORT}`))
     } catch (e) {
         console.log(e)
