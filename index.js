@@ -19,7 +19,7 @@ app.use('/api', router)
 //Обробка помилок, останній Middleware
 app.use(errorHandler)
 
-app.set("PORT", PORT);
+
 /*
 app.get('/', (req, res) => {
     res.status(200).json({message:'Working!!!'})    //Перевірка роботи сервера
@@ -28,9 +28,9 @@ app.get('/', (req, res) => {
 
 const start = async () => {
     try{
-        await sequelize.authenticate()
+        //await sequelize.authenticate()
         //await sequelize.sync()      //функція буде звіряти стан бази данних зі схемою данних 
-        app.listen(PORT, () => console.log(`Server started on port ${PORT}`))
+        app.listen(process.env.PORT || 5000, () => console.log(`Server started on port ${PORT}`))
     } catch (e) {
         console.log(e)
     }
